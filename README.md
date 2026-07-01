@@ -1,7 +1,7 @@
-# Project Backgroud
+# *Project Backgroud*
 The Tampa Bay Rays Organization is one of the smallest market teams in the MLB and consistently has one of the lowest known payrolls for its team. They recently had a change in ownership when Stuart Sternberg sold the franchise late last year to Patrick Zalupski. The Rays' market size makes them value their ability to trade for traits and key pieces on the team more than the average MLB team. They made it to the World Series championship in 2020 and followed it with some strong seasons in 2021-2023, but have had a string of 2 consecutive down years since.
 
-## Business Problem & Goal of Analysis
+## *Business Problem & Goal of Analysis*
 
 **1) Gap between on-field success and box office success**
 
@@ -118,7 +118,7 @@ div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; backgro
 </div>
 <img width="987" height="390" alt="image" src="https://github.com/user-attachments/assets/3fd8119c-16e5-4a14-9aab-656310ba296e" />
 
-h2 style="color: #2c3e50;">Business Recommendations for Improving Tampa Bay Rays Home Attendance</h2>
+# *Business Recommendations for Improving Tampa Bay Rays Home Attendance*
 
 <p>To boost Home attendance in the Tampa Bay Rays we went by our comprehensive analysis of game-level data, that was optimized from the XGBoost model and identified several key areas.</p>
 
