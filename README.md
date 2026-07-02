@@ -75,7 +75,7 @@ We will merge the datasets gameinfo and teamstats where we will use the gameinfo
 
 
 
-<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/0780e8c1-5d7c-4f39-a067-5ed1c083e6dd" />
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/3cab6c79-60bb-4439-b495-ae0c490f6c87" />
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/cd6d9435-2440-47e0-aa5d-6543636aaea2" />
 <img width="1389" height="574" alt="image" src="https://github.com/user-attachments/assets/b10617f1-f341-4dd2-99a6-cc143adc0a03" />
 
@@ -103,7 +103,7 @@ We will merge the datasets gameinfo and teamstats where we will use the gameinfo
   <li><strong>Decision Makers (High Gain):</strong> Features like is_weekend or opp_NYA are the "final word." Once the model knows it's a Saturday game against a popular opponent, it can make a very high-confidence prediction. It doesn't need to split on these features many times to get the point.</li>
 </ul>
 <img width="1590" height="590" alt="image" src="https://github.com/user-attachments/assets/40185bd7-8585-4432-885d-29a3ddf4eadd" />
-<h3 style="color: #2c3e50;">Summary for your Attendance Model</h3>
+<h3 style="color: #2c3e50;">Summary for Attendance Model</h3>
 <p>If you want to increase attendance, your model suggests you should focus on:</p>
 <ol>
   <li><strong>Scheduling/Marketing:</strong> Capitalize on the weekend/Saturday surge.</li>
