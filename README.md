@@ -45,29 +45,26 @@ We will merge the datasets gameinfo and teamstats where we will use the gameinfo
 **Game level focus**: Since the focus of this analysis is on game level stats, we will use a Python script where if a gameid matches from teamstats with gamestats. If gids match we will keep those columns.
 **Same data source**: It is important to note that both these data come from the same source, therefore follows the same rules.
 **Team perspective recording**: Another major point with the teamstat dataset is that it is recorded from the perspective of the team. For example, b_r and b_hr is the team that is at home.
+<p>The datasets that covers 2,250 from 1998–2025 but we had to stop at 2020 in the data since they are changing the stadium because of the hurricane and covid, it features weather (temp, precipitation, sky conditions), game timing (day/night, day of week, weekend), team performance (win/loss record, runs scored, home runs), opponent, and season. The target variable is attendance (avg: ~17,221; range: 2,924–55,000)</p>
+
+
 
 <img width="1390" height="490" alt="image" src="https://github.com/user-attachments/assets/d5d6dde4-d339-4b05-871e-7d95398b93da" />
 <img width="868" height="393" alt="image" src="https://github.com/user-attachments/assets/4859c21f-916e-466f-8602-3b6febcbdb1f" />
-
-
-<img width="1027" height="552" alt="image" src="https://github.com/user-attachments/assets/4b8fedb2-d811-4480-b459-cf95ac2bf27f" />
-<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/a914d518-01df-42d6-acc4-7b909ff0e299" />
-<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/b70b14ec-2ff3-4d50-a151-79f5b580d6ac" />
 <img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/58522de4-314b-4220-bccc-bebf8a311e27" />
-<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/96c16073-5d21-4395-863d-3f84e124af5d" />
-<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/96ca9821-2919-4a1e-8cf7-137bceb16c6f" />
-<img width="1189" height="690" alt="image" src="https://github.com/user-attachments/assets/84098229-0b43-4577-b62a-ca762f2419ca" />
-<img width="945" height="590" alt="image" src="https://github.com/user-attachments/assets/65d29441-bb4d-48b9-9499-670b6124e393" />
-<img width="945" height="590" alt="image" src="https://github.com/user-attachments/assets/dfa5d9e7-9a3c-4a29-b0fe-6e594e617886" />
+
+
+
+# Machine Learning Models for Predicting Tampa Bay Rays Game Attendance
+
+
+
+<h3 style="color: #2c3e50;">1. Train/Test Split</h3>
+<p>Because the nature of the games has been ordered from 1998–2025, a standard random 80/20 split would cause data breach, so the approach is to train a model on 2020 games and tested on 2010 games which it doesn't make any sense. Instead the two strategies will be used so we will split the seasons 1998–2021 which are 85% of the games and for training we will use 2022–2025 as the final test to mirror the real world using historical patterns.</p>
 <img width="1023" height="393" alt="image" src="https://github.com/user-attachments/assets/6a4953e2-1d1f-41b9-b7e0-18eb7c81a364" />
-
-
-<p>The datasets that covers 2,250 from 1998–2025 but we had to stop at 2020 in the data since they are changing the stadium because of the hurricane and covid, it features weather (temp, precipitation, sky conditions), game timing (day/night, day of week, weekend), team performance (win/loss record, runs scored, home runs), opponent, and season. The target variable is attendance (avg: ~17,221; range: 2,924–55,000)</p>
-
-<h3 style="color: #2c3e50;">1. Model Selection</h3>
+<h3 style="color: #2c3e50;">2. Model Selection</h3>
 <p>The task is to predict attendance for the model selection, in consideration of three points which are: Interpretability vs. predictive power. Also The Rays' front office needs to schedule more weekend games, the dataset is mixed up with feature types, (temperature, win/loss record, run differential) with categorical ones (opponent, day of week, sky condition, game type).</p>
 
-<h3 style="color: #2c3e50;">2. Models</h3>
 
 <p><strong>Model 1 – Multiple Linear Regression (Baseline):</strong> The starting point of model 1 to be tested is Multiple Linear Regression (Baseline), which is clean and easy to estimate attendance such as: "A weekend game is worth +X fans also it shows the season record adds +Y which it shows how amazing and beats every other model well.</p>
 
@@ -75,15 +72,14 @@ We will merge the datasets gameinfo and teamstats where we will use the gameinfo
 
 <p><strong>Model 3 – Gradient Boosting Regressor (XGBoost):</strong> Where Random Forest builds trees in parallel, what XGBoost does is build each tree in order, which it can fix residual errors. This type of order predicts accuracy among the three models, it can also prevent overfitting on a dataset of this size (~2,200 complete records).</p>
 
-<h3 style="color: #2c3e50;">3. Train/Test Split</h3>
-<p>Because the nature of the games has been ordered from 1998–2025, a standard random 80/20 split would cause data breach, so the approach is to train a model on 2020 games and tested on 2010 games which it doesn't make any sense. Instead the two strategies will be used so we will split the seasons 1998–2021 which are 85% of the games and for training we will use 2022–2025 as the final test to mirror the real world using historical patterns.</p>
+
 
 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/0780e8c1-5d7c-4f39-a067-5ed1c083e6dd" />
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/cd6d9435-2440-47e0-aa5d-6543636aaea2" />
 <img width="1389" height="574" alt="image" src="https://github.com/user-attachments/assets/b10617f1-f341-4dd2-99a6-cc143adc0a03" />
-<img width="1590" height="590" alt="image" src="https://github.com/user-attachments/assets/40185bd7-8585-4432-885d-29a3ddf4eadd" />
-div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; background-color: #f9f9f9; font-family: Arial, sans-serif; max-width: 900px;">
+
+
 
 <h3 style="color: #2c3e50;">1. Top Features by Gain (The "Impact" Players)</h3>
 <p>Gain measures how much a feature improves the model's accuracy, lets take this step by step when we use the model features and make a split it reduces errors and your attendance prediction.</p>
@@ -106,7 +102,7 @@ div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; backgro
   <li><strong>Broad Filters (High Weight):</strong> The model uses season and month to sort the data over and over again. They are necessary for the model's structure, but they don't always provide the "final" answer.</li>
   <li><strong>Decision Makers (High Gain):</strong> Features like is_weekend or opp_NYA are the "final word." Once the model knows it's a Saturday game against a popular opponent, it can make a very high-confidence prediction. It doesn't need to split on these features many times to get the point.</li>
 </ul>
-
+<img width="1590" height="590" alt="image" src="https://github.com/user-attachments/assets/40185bd7-8585-4432-885d-29a3ddf4eadd" />
 <h3 style="color: #2c3e50;">Summary for your Attendance Model</h3>
 <p>If you want to increase attendance, your model suggests you should focus on:</p>
 <ol>
@@ -116,7 +112,6 @@ div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; backgro
 </ol>
 
 </div>
-<img width="987" height="390" alt="image" src="https://github.com/user-attachments/assets/3fd8119c-16e5-4a14-9aab-656310ba296e" />
 
 # *Business Recommendations for Improving Tampa Bay Rays Home Attendance*
 
@@ -127,19 +122,24 @@ div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; backgro
   <li><strong>Prioritize Weekend &amp; Evening Games:</strong> from our analysis we have collected data about when is the higher attendance which are on Saturday and Sunday games also the exact times which are 5 PM and 8 pm that mostly have more high-profile games.</li>
   <li><strong>Leverage Early &amp; Late Season:</strong> the excitement of the start and the end of the season which makes the fans attend more games which has been documented in March and October.</li>
 </ul>
+<img width="1027" height="552" alt="image" src="https://github.com/user-attachments/assets/4b8fedb2-d811-4480-b459-cf95ac2bf27f" />
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/a914d518-01df-42d6-acc4-7b909ff0e299" />
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/96c16073-5d21-4395-863d-3f84e124af5d" />
+
 
 <h3 style="color: #2c3e50;">2. Opponent-Based Marketing &amp; Promotions</h3>
 <ul>
   <li><strong>Target Popular Opponents:</strong> Teams like the New York Yankees (NYA), Boston Red Sox (BOS), Atlanta Braves (ATL), Chicago Cubs (CHN), and San Francisco Giants (SFN) consistently draw larger crowds which means more marketing and premium pricing especially for games against these popular opponents.</li>
   <li><strong>Bundle Less Popular Games:</strong> creating promotion for families also ticket packages for games that have lower attendance mainly in middle of the week games.</li>
 </ul>
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/b70b14ec-2ff3-4d50-a151-79f5b580d6ac" />
 
 <h3 style="color: #2c3e50;">3. Enhance Game Day Experience &amp; Value</h3>
 <ul>
   <li><strong>Focus on 'Event' Games:</strong> Playoff games like the World Series, LCS actually draws the biggest crowds. Most fans come to these games because its the most important ones, from these events the team should take ideas and apply them on regular season games to make the other games feel the energy of the most important games by adding giveaways and promotions like season pass.</li>
   <li><strong>Monitor Game Performance, But Don't Overreact to Single Games:</strong> Our analysis suggests that the loss in the previous games does not significantly deter attendance for the next home game. This shows that the fan base's decision is influenced by broader factors rather than immediate team performance fluctuations.</li>
 </ul>
-
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/96ca9821-2919-4a1e-8cf7-137bceb16c6f" />
 <h3 style="color: #2c3e50;">4. Continuous Analysis &amp; Adaptation</h3>
 <ul>
   <li><strong>Dynamic Pricing &amp; Promotion:</strong> adjusting pricing accordingly from monitoring attendance trends it gives leverage insight to the model forecast expecting attendance.</li>
@@ -150,7 +150,7 @@ div style="border: 2px solid #4a90d9; border-radius: 8px; padding: 20px; backgro
 <ul>
   <li>Payroll investment and attendance is not connected directly to each other simply teams always linked to pay roll while attendance is not if you pay more doesn't mean you will have higher attendance, marketing has to be involved so both categories can link together for a better strategic investment.</li>
 </ul>
-
+<img width="1189" height="690" alt="image" src="https://github.com/user-attachments/assets/84098229-0b43-4577-b62a-ca762f2419ca" />
 </div>
 
 
